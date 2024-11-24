@@ -1,0 +1,9 @@
+resources:
+  - ../../common
+  - ../../services/member
+  - ../../services/auction
+  - ../../services/receipt
+  - ../../services/apiGateway
+  - namespace.yaml
+
+namespace: test

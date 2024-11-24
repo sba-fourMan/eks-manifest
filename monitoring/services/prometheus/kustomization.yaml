@@ -1,0 +1,6 @@
+resources:
+  - application.yaml
+  - pv.yaml
+  - pvc.yaml
+
+namespace: monitoring

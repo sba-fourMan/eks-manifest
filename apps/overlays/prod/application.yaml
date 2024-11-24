@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: apps
+  namespace: argocd
+spec:
+  project: apps
+  source:
+    repoURL: https://github.com/sba-fourMan/eks-manifest.git
+    targetRevision: HEAD
+    path: apps/overlays/test
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

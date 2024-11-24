@@ -1,0 +1,28 @@
+alertmanager:
+  enabled: false
+
+server:
+  persistentVolumeClaim:
+    create: false
+    existingClaim: prometheus-ebs-pvc
+  retention: 15d
+  resources:
+    requests:
+      memory: 4Gi
+      cpu: 1
+    limits:
+      memory: 8Gi
+      cpu: 2
+
+service:
+  type: ClusterIP
+
+  remoteWrite: []
+  ruleNamespaceSelector: 
+    matchLabels:
+      environment:
+        - test
+        - prod
+      
+pushgateway:
+  enabled: false
