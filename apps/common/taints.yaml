@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: app-taints
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: app-taints
+  template:
+    metadata:
+      labels:
+        app: app-taints
+    spec:
+      containers:
+      - name: add-taints
+        image: bitnami/kubectl:latest
+        command:
+        - /bin/sh
+        - -c
+        - |
+          kubectl taint nodes $(hostname) dedicated=app:NoSchedule --overwrite
+        volumeMounts:
+        - name: kubeconfig
+          mountPath: /root/.kube
+      volumes:
+      - name: kubeconfig
+        hostPath:
+          path: /etc/kubernetes
