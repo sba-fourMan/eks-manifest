@@ -5,14 +5,5 @@ metadata:
   labels:
     environment: prod
     node: app
----
-apiVersion: v1
-kind: LimitRange
-metadata:
-  name: default-node-selector
-  namespace: app
-spec:
-  limits:
-  - type: Pod
-    defaultRequest:
-      nodeSelector: "node=app"
+  annotations:
+    scheduler.alpha.kubernetes.io/node-selector: "node=app"

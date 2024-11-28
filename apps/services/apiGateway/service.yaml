@@ -1,12 +1,12 @@
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
-  name: apiGateway-service
+  name: apigateway-service
   labels:
-    app: apiGateway
+    app: apigateway
 spec:
   selector:
-    app: apiGateway
+    app: apigateway
   ports:
   - protocol: TCP
     port: 8080

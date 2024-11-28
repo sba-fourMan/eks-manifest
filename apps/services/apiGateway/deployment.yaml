@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: apiGateway-deployment
+  name: apigateway-deployment
   labels:
-    app: apiGateway
+    app: apigateway
   annotations:
     argocd-image-updater.argoproj.io/image-list: "703671902880.dkr.ecr.ap-northeast-2.amazonaws.com/dev-apigateway"
     argocd-image-updater.argoproj.io/image-policy: "numerical"
@@ -11,11 +11,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: apiGateway
+      app: apigateway
   template:
     metadata:
       labels:
-        app: apiGateway
+        app: apigateway
     spec:
       tolerations:
       - key: "dedicated"
@@ -25,10 +25,10 @@ spec:
       nodeSelector:
         node: app
       containers:
-        - name: apiGateway-container
+        - name: apigateway-container
           image: 703671902880.dkr.ecr.ap-northeast-2.amazonaws.com/dev-apigateway:4
           ports:
-            - 8080
+            - containerPort: 8080
           resources:
             requests:
               cpu: "300m"

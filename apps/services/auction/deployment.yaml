@@ -28,7 +28,7 @@ spec:
         - name: auction-container
           image: 703671902880.dkr.ecr.ap-northeast-2.amazonaws.com/dev-auction:21
           ports:
-            - 8080
+            - containerPort: 8080
           resources:
             requests:
               cpu: "300m"

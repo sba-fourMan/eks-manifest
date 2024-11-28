@@ -4,4 +4,4 @@ metadata:
   name: api-gateway-ingress
 spec:
   rules:
-    - host: prod.example.com
+    - host: prod.sesaclab.site

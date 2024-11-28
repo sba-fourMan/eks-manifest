@@ -28,7 +28,7 @@ spec:
         - name: member-container
           image: 703671902880.dkr.ecr.ap-northeast-2.amazonaws.com/dev-member:30
           ports:
-            - 8080
+            - containerPort: 8080
           resources:
             requests:
               cpu: "300m"
