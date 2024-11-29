@@ -29,6 +29,9 @@ spec:
           image: 703671902880.dkr.ecr.ap-northeast-2.amazonaws.com/dev-auction:21
           ports:
             - containerPort: 8080
+          envFrom:
+          - configMapRef:
+              name: app-config
           resources:
             requests:
               cpu: "300m"

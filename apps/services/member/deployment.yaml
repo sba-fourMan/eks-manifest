@@ -23,12 +23,15 @@ spec:
         value: "app"
         effect: "NoSchedule"
       nodeSelector:
-        node-group: app
+        node: app
       containers:
         - name: member-container
           image: 703671902880.dkr.ecr.ap-northeast-2.amazonaws.com/dev-member:30
           ports:
             - containerPort: 8080
+          envFrom:
+          - configMapRef:
+              name: app-config
           resources:
             requests:
               cpu: "300m"
