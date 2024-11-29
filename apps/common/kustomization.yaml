@@ -2,4 +2,3 @@ resources:
   - configmap.yaml
   - external_secret.yaml
   - ingress.yaml
-  - taints.yaml

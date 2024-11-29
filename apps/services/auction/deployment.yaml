@@ -17,13 +17,6 @@ spec:
       labels:
         app: auction
     spec:
-      tolerations:
-      - key: "dedicated"
-        operator: "Equal"
-        value: "app"
-        effect: "NoSchedule"
-      nodeSelector:
-        node: app
       containers:
         - name: auction-container
           image: 703671902880.dkr.ecr.ap-northeast-2.amazonaws.com/dev-auction:21

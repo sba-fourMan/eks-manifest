@@ -17,13 +17,6 @@ spec:
       labels:
         app: apigateway
     spec:
-      tolerations:
-      - key: "dedicated"
-        operator: "Equal"
-        value: "app"
-        effect: "NoSchedule"
-      nodeSelector:
-        node: app
       containers:
         - name: apigateway-container
           image: 703671902880.dkr.ecr.ap-northeast-2.amazonaws.com/dev-apigateway:4
